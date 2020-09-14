@@ -5,10 +5,18 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <p>
-        {" "}
-        <h1>Hello</h1>{" "}
-      </p>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>Edited code!</p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hello React
+        </a>
+      </header>
     </div>
   );
 }
