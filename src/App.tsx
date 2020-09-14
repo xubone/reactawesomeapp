@@ -2,10 +2,10 @@ import React from "react";
 import "./App.css";
 
 import Title from "./components/Title";
-import Pokemon from "./components/Pokemon";
+import Pokemon from "./components/Pokemon/Pokemon";
 
 function App() {
-  const pokemons = [
+  const all_pokemon = [
     {
       name: "Charizard",
       weight: 90,
@@ -36,11 +36,11 @@ function App() {
     },
   ];
   return (
-    <div className="App">
-      <main>
-        <Title content="Some text" />
-        {pokemons.map((pokemon) => {
-          return (
+    <main className="container .my-5 ">
+      <Title content="Pokemon's" />
+      <div className="row .mb-4">
+        {all_pokemon.map((pokemon) => (
+          <div className="col-md-6 col-lg-4">
             <Pokemon
               name={pokemon.name}
               weight={pokemon.weight}
@@ -48,38 +48,10 @@ function App() {
               terrifying={pokemon.terrifying}
               abilities={pokemon.abilities}
             />
-          );
-        })}
-        {/* <Pokemon
-          name="Charizard"
-          weight={90}
-          awesome={true}
-          terrifying={false}
-          abilities={["Blaze", "Solar power", "Tough claws", "Drought"]}
-        />
-        <Pokemon
-          name="Bulbasaur"
-          weight={90}
-          awesome={true}
-          terrifying={false}
-          abilities={["Overgrow", "Chlorophyll"]}
-        />
-        <Pokemon
-          name="Mewtwo"
-          weight={90}
-          awesome={true}
-          terrifying={false}
-          abilities={}
-        />
-        <Pokemon
-          name="Mega beedrill"
-          weight={90}
-          awesome={true}
-          terrifying={false}
-          abilities={["Intimidate", "Unnerve power"]}
-        /> */}
-      </main>
-    </div>
+          </div>
+        ))}
+      </div>
+    </main>
   );
 }
 
